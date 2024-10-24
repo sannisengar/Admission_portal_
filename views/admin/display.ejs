@@ -1,0 +1,163 @@
+<%-include('./header.ejs') %> <%-include('./sidebar.ejs') %>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Display Student</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Display</li>
+          </ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-header">
+          <button
+            type="button"
+            class="btn btn-info"
+            data-toggle="modal"
+            data-target="#addstudent"
+          >
+            Add Student
+          </button>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body" style="background-color: rgb(177, 219, 205)">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Image</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% d.forEach((item,index)=>{ %>
+              <tr>
+                <td><%= index+1 %></td>
+                <td><%= item.name %></td>
+                <td><%= item.email %></td>
+                <td><img src="<%= item.image.url %>" alt="" width="50" /></td>
+                <td>
+                  <% if(d1) { %>
+                  <a href="/admin/courseDiasplay" class="btn btn-info btn-sm"
+                    >Course</a>
+                  <% } %>
+                  <a
+                    href="/admin/viewUser/<%= item._id %>"
+                    class="btn btn-info btn-sm"
+                    >View</a
+                  >
+                  <a
+                    href="/admin/EditUser/<%= item._id %>"
+                    class="btn btn-success btn-sm"
+                    >Edit</a
+                  >
+                  <a
+                    href="/admin/deleteUser/<%= item._id %>"
+                    class="btn btn-danger btn-sm"
+                    >Delete</a
+                  >
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Image</th>
+                <th>Action</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.card-body -->
+        <center>
+          <a
+            href="/admin/deshboard"
+            class="btn btn-sm text-white"
+            style="background-color: orangered"
+            ><b>Back To Dashboarb</b></a
+          >
+        </center>
+      </div>
+      <!-- /.card -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<div class="modal fade" id="addstudent">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Default Modal</h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="background-color: rgb(222, 166, 220)">
+        <form
+          action="/admin/userInsert"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="form-group">
+            <label for="">Name:</label>
+            <input type="text" name="n" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">Email:</label>
+            <input type="email" name="e" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">Password:</label>
+            <input type="password" name="p" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">Confirm-Password:</label>
+            <input type="password" name="cp" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">Image:</label>
+            <input type="file" name="image" class="form-control" />
+          </div>
+          <button class="btn btn-primary" type="submit">submit</button>
+        </form>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<%-include('./footer.ejs') %>

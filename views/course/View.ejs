@@ -1,0 +1,98 @@
+<%-include('../layouts/header.ejs') %>
+
+    <br><br><br>
+    <div class="content-wrapper" style="margin-bottom: 20px; margin-top: 20px">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">View Course
+                        </h1>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <div class="content mt-5">
+            <div class="container-fluid">
+                <div class="card">
+                    <!-- /.card-header -->
+                    <div class="card-body"  style="background-color: aquamarine;">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>D.O.B.</th>
+                                    <th>Address</th>
+                                    <th>Gender</th>
+                                    <th>Course</th>
+                                    <th>Qualification</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <%= d.name %>
+                                    </td>
+                                    <td>
+                                        <%= d.email %>
+                                    </td>
+                                    <td>
+                                        <%= d.phone %>
+                                    </td>
+                                    <td>
+                                        <%= d.dob %>
+                                    </td>
+                                    <td>
+                                        <%= d.address %>
+                                    </td>
+                                    <td>
+                                        <%= d.gender %>
+                                    </td>
+                                    <td>
+                                        <%= d.course %>
+                                    </td>
+                                    <td>
+                                        <%= d.Qualification %>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>D.O.B.</th>
+                                    <th>Address</th>
+                                    <th>Gender</th>
+                                    <th>Course</th>
+                                    <th>Qualification</th>
+
+                                </tr>
+
+                            </tfoot>
+                        </table>
+                        <center>
+                            <a href="/courseDisplay" class="btn btn-sm text-white" style="background-color: orangered;">Back to course_Display</a>
+
+                        </center>
+
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <%-include('../layouts/footer.ejs') %>

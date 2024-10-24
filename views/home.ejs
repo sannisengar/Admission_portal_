@@ -1,0 +1,336 @@
+<%-include('./layouts/header.ejs') %>
+
+    <!-- carousel -->
+    <section id="carousel">
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+            <!-- <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                    aria-label="Slide 1" aria-current="true"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+                    class=""></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
+                    class=""></button>
+            </div> -->
+
+            <div class="carousel-inner">
+                <!-- item-1 -->
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img class="carouselHeight" src="./Images/CampusImage-1.avif" alt="Campus Image-1" width="100%">
+                </div>
+
+                <!-- item-2 -->
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img class="carouselHeight" src="./Images/CampusImage-2.avif" alt="Campus Image-2" width="100%">
+                </div>
+
+                <!-- item-3 -->
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img class="carouselHeight" src="./Images/CampusImage-3.jpeg" alt="Campus Image-3" width="100%">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <!-- End Carousel -->
+
+    <!-- Courses -->
+    <section id="courses">
+
+        <section class="pt-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto" style="background-color:lightgreen;">
+                    <h1 class="fw-light "><marquee behavior="" direction=""><b >Welcome User</b></marquee></h1>
+                    <p class="lead text-body-secondary"><b>Maharana Pratap College, GWALIOR</b></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detail -->
+        <div class="container" id="detail">
+            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                <div class="col" >
+                  <div class="card card-cover h-100 p-5 overflow-hidden text-bg-white rounded-4 shadow-lg" style="background-color: aqua;">
+                        <h3 class="text-center">Vision</h3>
+                        <p class="fw-light text-dark tmy-auto">To be an eminent institution of repute that fosters the
+                            relentless pursuit of excellence through socially responsible, transformative education,
+                            research and training.</p>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-cover h-100 p-5 overflow-hidden text-bg-white rounded-4 shadow-lg" style="background-color: rgb(160, 123, 109);">
+                        <h3 class="text-center">Mission</h3>
+                        <p class="fw-light text-dark my-auto">In pursuance to our vision, the institute’s mission is to
+                            provide value based quality education by innovating and continuously improving upon the
+                            disciplines of management, law, commerce and computer applications through advanced methods
+                            of training, meaningful research and intimate relations with industry, business and other
+                            institutions in the country and abroad.</p>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-cover h-100 p-5 overflow-hidden text-bg-white rounded-4 shadow-lg" style="background-color: rgb(105, 152, 11);">
+                        <h3 class="text-center">Objective</h3>
+                        <p class="fw-light text-dark ">To develop confident and innovative Business,IT & Law
+                            professionals by imparting professional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Detail -->
+
+        <div class="album py-5">
+            <div class="container">
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <!-- card-1 -->
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img class="rounded w-100" src="./Images/Course-1.jpeg" alt="Course-1" height="200rem">
+                            <div class="card-body text-center">
+                                <h2>B.Tech</h2>
+                                <p class="card-text">B.Tech is a professional undergraduate engineering degree</p>
+                                <% if(btech) { %> 
+                                   <a href="/courseDisplay" class="btn btn-info">Course Display</a>
+                                 <% } else{ %>
+                                <button type="button" class="btn btn-lg btn-info text-white" data-bs-target="#btech"
+                                    data-bs-toggle="modal">Register</button>
+                                    <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card-2 -->
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img class="rounded w-100" src="./Images/Course-2.jpeg" alt="Course-2" height="200rem">
+                            <div class="card-body text-center">
+                                <h2>BCA</h2>
+                                <p class="card-text">BCA is a three-year Bachelor's Degree in Computer Application</p>
+                                 <% if(bca) { %> 
+                                     <a href="/courseDisplay" class="btn btn-info">Course Display</a>
+                                       <% } else{ %>
+                                <button type="button" class="btn  btn-info btn-lg text-white"  data-bs-target="#bca"
+                                    data-bs-toggle="modal">Register</button>
+                                  <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card-3 -->
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img class="rounded w-100" src="./Images/Course-3.jpeg" alt="Course-3" height="200rem">
+                            <div class="card-body text-center">
+                                <h2>MCA</h2>
+                                <p class="card-text">MCA is a professional post-graduation degree in Computer
+                                    Application</p>
+                                     <% if(mca) { %> 
+                                     <a href="/courseDisplay" class="btn btn-info">Course Display</a>
+                                       <% } else{ %>
+                                <button type="button" class="btn btn-info btn-lg text-white"  data-bs-target="#mca"
+                                    data-bs-toggle="modal">Register</button>
+                                  <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- End Courses -->
+
+    <%-include('./layouts/footer.ejs') %>
+
+
+<!--b.tech model start -->
+    <div class="modal fade" id="btech">
+        <div class="modal-dialog" > <!--model xl,sm,lg-->
+            <div class="modal-content mx-auto" style="background-color: aqua;" >
+                <div class="modal-header">
+                    <h5 class="modal-tittle"> Registration Form</h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal"></button>
+                </div><!--modal-header end-->
+                <div class="modal-body">
+
+                    <form action="/courseInsert" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            Name
+                            <input type="text" name="name" value="<%= n%>" placeholder="Enter name"
+                                class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            Email
+                            <input type="email" placeholder="Email" value="<%= e%>" name="email" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            Phone
+                            <input type="number" placeholder="phone no." name="phone" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            D.O.B.
+                            <input type="date" placeholder=" Enter D.O.B." name="dob" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            Address
+                            <textarea name="address" placeholder="Enter address" class="form-control"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            Gender 
+                            <input type="radio" name="gender" class="mr-2" value="Male" >Male
+                             <input type="radio" name="gender" value="Female" >Female
+                        </div>
+                        <div class="mb-5">
+                            Qualification
+                            <select name="Qualification"   class="form-control">
+                                <option>Qualification</option>
+                                <option value="12th in Mathematics">12th in Mathematics</option>
+                                 <option value="12th+ITI">12th+ITI</option>
+                            </select>
+                            <div class="mb-5">
+                                Course
+                                <input type="text" value="btech" class="form-control" name="course" readonly >
+                            </div>
+                            <div class="mb-3">
+                               <center>
+                                <button class="btn btn-success btn-lg text-white" type="submit">Sumbit</button>
+                               </center>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div><!--modal-body end-->
+            </div><!--modal content end-->
+        </div><!--modal-dialog end-->
+    </div>
+    <!--b.tech model end -->
+
+     <!-- BCA model start -->
+    <div class="modal fade" id="bca">
+        <div class="modal-dialog" > <!--model xl,sm,lg-->
+            <div class="modal-content mx-auto" style="background-color: aqua;" >
+                <div class="modal-header">
+                    <h5 class="modal-tittle"> Registration Form</h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal"></button>
+                </div><!--modal-header end-->
+                <div class="modal-body">
+
+                    <form action="/courseInsert" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            Name
+                            <input type="text" name="name" value="<%= n%>" placeholder="Enter name"
+                                class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            Email
+                            <input type="email" placeholder="Email" value="<%= e%>" name="email" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            Phone
+                            <input type="number" placeholder="phone no." name="phone" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            D.O.B.
+                            <input type="date" placeholder=" Enter D.O.B." name="dob" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            Address
+                            <textarea name="address" placeholder="Enter address" class="form-control"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            Gender 
+                            <input type="radio" name="gender" class="mr-2" value="Male" readonly>Male <input
+                                type="radio" name="gender" value="Female" readonly>Female
+                        </div>
+                        <div class="mb-5">
+                            Qualification
+                            <select name="Qualification"  readonly class="form-control">
+                                <option>Qualification</option>
+                                  <option value="12th in Mathematics">12th in Mathematics</option>
+                                 <option value="12th+ITI">12th+ITI</option>
+                            </select>
+                            <div class="mb-5">
+                                Course
+                                <input type="text" value="bca" class="form-control" name="course" readonly>
+                            </div>
+                            <div class="mb-3">
+                               <center>
+                                <button class="btn btn-success btn-lg text-white" type="submit">Sumbit</button>
+                               </center>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div><!--modal-body end-->
+            </div><!--modal content end-->
+        </div><!--modal-dialog end-->
+    </div>
+    <!-- BCA model end -->
+
+      <!-- MCA model start -->
+    <div class="modal fade" id="mca">
+        <div class="modal-dialog" > <!--model xl,sm,lg-->
+            <div class="modal-content mx-auto" style="background-color: aqua;" >
+                <div class="modal-header">
+                    <h5 class="modal-tittle"> Registration Form</h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal"></button>
+                </div><!--modal-header end-->
+                <div class="modal-body">
+
+                    <form action="/courseInsert" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            Name
+                            <input type="text" name="name" value="<%= n%>" placeholder="Enter name"
+                                class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            Email
+                            <input type="email" placeholder="Email" value="<%= e%>" name="email" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            Phone
+                            <input type="number" placeholder="phone no." name="phone" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            D.O.B.
+                            <input type="date" placeholder=" Enter D.O.B." name="dob" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            Address
+                            <textarea name="address" placeholder="Enter address" class="form-control"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            Gender 
+                            <input type="radio" name="gender" class="mr-2" value="Male" readonly>Male 
+                            <input  type="radio" name="gender" value="Female" readonly>Female
+                        </div>
+                        <div class="mb-5">
+                            Qualification
+                            <select name="Qualification"  readonly class="form-control">
+                                <option >Qualification</option>
+                              <option value="12th in Mathematics">12th in Mathematics</option>
+                                 <option value="12th+ITI">12th+ITI</option>
+                            </select>
+                            <div class="mb-5">
+                                Course
+                                <input type="text" value="mca" class="form-control" name="course" readonly>
+                            </div>
+                            <div class="mb-3">
+                               <center>
+                                <button class="btn btn-success btn-lg text-white" type="submit">Sumbit</button>
+                               </center>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div><!--modal-body end-->
+            </div><!--modal content end-->
+        </div><!--modal-dialog end-->
+    </div>
+    <!-- MCA model end -->

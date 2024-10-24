@@ -1,0 +1,93 @@
+<%-include('../layouts/header.ejs') %>
+
+<div class="content-wrapper" style="margin-bottom: 20px; margin-top: 100px">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Course Display</h1>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <div class="content mt-5">
+    <div class="container-fluid">
+      <div class="card">
+        <!-- /.card-header -->
+        <div class="card-body" style="background-color: aquamarine">
+          <table
+            id="example1"
+            class="table text-center table-bordered table-striped"
+          >
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Course</th>
+                <th>Status</th>
+                <th>Comment</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% d.forEach((item,index)=>{ %>
+              <tr>
+                <td><%= index+1 %></td>
+                <td><%= item.name %></td>
+                <td><%= item.email %></td>
+                <td><%= item.phone %></td>
+
+                <td><%= item.course %></td>
+                <td class="btn btn-info"><%= item.status %></td>
+                <td><%= item.Comment %></td>
+
+                <td>
+                  <a
+                    href="/courseView/<%=item._id%>"
+                    class="btn btn-info btn-sm"
+                    >View</a
+                  >
+                  <a
+                    href="/courseEdit/<%=item._id%>"
+                    class="btn btn-success btn-sm"
+                    >Edit</a
+                  >
+                  <!-- <a href="/courseDelete/<%=item._id%>" class="btn btn-danger btn-sm">Delete</a> -->
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Course</th>
+                <th>Status</th>
+                <th>Comment</th>
+                <th>Action</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<%-include('../layouts/footer.ejs') %>
