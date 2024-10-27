@@ -10,11 +10,13 @@ cloudinary.config({
 });
 
 class AdminController {
-
   static deshboard = async (req, res) => {
     try {
+      const allStudents = await UserModel.countDocuments({});
+      const allCoures = await courseModel.countDocuments({});
       const { name, image } = req.userData;
-      res.render("admin/deshboard", { n: name, i: image });
+      res.render("admin/deshboard", { n: name, i: image , a:allStudents , c:allCoures});
+      //  console.log(allCoures);
     } catch (error) {
       console.log(error);
     }
